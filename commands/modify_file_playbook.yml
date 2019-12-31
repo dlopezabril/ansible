@@ -1,4 +1,4 @@
-- name: Copy file
+- name: Modify file
   hosts: host-list
   remote_user: vagrant
   gather_facts: true
