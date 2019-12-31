@@ -16,14 +16,19 @@ source ~/Workspaces/splunk_scripts/env/bin/activate
 cd ~/Workspaces/ansible
 ```
 
-> **Execute ansible over an IP**
+> **ansible copy file in an host**
 ```shell
-ansible-playbook copy/copy_playbook.yml -i copy/inventory -u vagrant --private-key=~/Workspaces/vagrant/centos7/.vagrant/machines/default/virtualbox/private_key -vvvv
+ansible-playbook commands/copy_playbook.yml -i commands/inventory -u vagrant --private-key=~/Workspaces/vagrant/centos7/.vagrant/machines/default/virtualbox/private_key -vvvv
+```
+
+> **ansible modify file in an host**
+```shell
+ansible-playbook commands/modify_file_playbook.yml -i commands/inventory -u vagrant --private-key=~/Workspaces/vagrant/centos7/.vagrant/machines/default/virtualbox/private_key -vvvv
 ```
 
 > **Ping over an IP**
 ```shell
-ansible -i copy/inventory -m ping -u vagrant 10.42.0.15 --private-key=~/Workspaces/vagrant/centos7/.vagrant/machines/default/virtualbox/private_key
+ansible -i commands/inventory -m ping -u vagrant 10.42.0.15 --private-key=~/Workspaces/vagrant/centos7/.vagrant/machines/default/virtualbox/private_key
 ```
 
 > **Projects**
