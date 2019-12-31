@@ -18,12 +18,17 @@ cd ~/Workspaces/ansible
 
 > **ansible copy file in an host**
 ```shell
-ansible-playbook commands/copy_playbook.yml -i commands/inventory -u vagrant --private-key=~/Workspaces/vagrant/centos7/.vagrant/machines/default/virtualbox/private_key -vvvv
+ansible-playbook commands/copy_playbook.yml -i commands/inventory --private-key=~/Workspaces/vagrant/centos7/.vagrant/machines/default/virtualbox/private_key -vvvv
 ```
 
 > **ansible modify file in an host**
 ```shell
-ansible-playbook commands/modify_file_playbook.yml -i commands/inventory -u vagrant --private-key=~/Workspaces/vagrant/centos7/.vagrant/machines/default/virtualbox/private_key -vvvv
+ansible-playbook commands/modify_file_playbook.yml -i commands/inventory --private-key=~/Workspaces/vagrant/centos7/.vagrant/machines/default/virtualbox/private_key -vvvv
+```
+
+> **ansible modify file in an host**
+```shell
+ansible-playbook commands/osversions_playbook.yml -i commands/inventory --private-key=~/Workspaces/vagrant/centos7/.vagrant/machines/default/virtualbox/private_key -vvvv
 ```
 
 > **Ping over an IP**
