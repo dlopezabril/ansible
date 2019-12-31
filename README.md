@@ -1,32 +1,32 @@
-## ansible
+# ansible
 Ansible Automation Projects
 
-> Access to Ansible workspace
+> **Access to Ansible workspace**
 ```shell
 code ~/Workspaces/ansible/ansible.code-workspace
 ```
 
-> Set python source
+> **Set python source**
 ```shell
 source ~/Workspaces/splunk_scripts/env/bin/activate
 ```
 
-> Set Path
+> **Set Path**
 ```shell
-cd ~/Workspaces/splunk_scripts/ansible_templates/copy/ansible
+cd ~/Workspaces/ansible
 ```
 
-> Execute ansible over an IP
+> **Execute ansible over an IP**
 ```shell
-ansible-playbook sample_playbook.yml -i inventory -u vagrant --private-key=~/Vagrant/CentOS7/.vagrant/machines/default/virtualbox/private_key -vvvv
+ansible-playbook copy/copy_playbook.yml -i copy/inventory -u vagrant --private-key=~/Workspaces/vagrant/centos7/.vagrant/machines/default/virtualbox/private_key -vvvv
 ```
 
-> Ping over an IP
+> **Ping over an IP**
 ```shell
-ansible -i inventory -m ping -u vagrant 10.42.0.15 --private-key=~/Vagrant/CentOS7/.vagrant/machines/default/virtualbox/private_key
+ansible -i copy/inventory -m ping -u vagrant 10.42.0.15 --private-key=~/Workspaces/vagrant/centos7/.vagrant/machines/default/virtualbox/private_key
 ```
 
-> **Project**
+> **Projects**
 > [ansible_copy.zip](:storage/4ceba4ea-10fa-4f24-9734-f2547cd27107/09b971b3.zip)
 
 > **Video:** 
