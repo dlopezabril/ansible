@@ -1,0 +1,9 @@
+- name: Copy file
+  hosts: host-list
+  remote_user: vagrant
+  gather_facts: true
+  tasks:
+    - name: "copy file to remote host"
+      copy:
+        src: uno.png
+        dest: /home/vagrant/uno.png
