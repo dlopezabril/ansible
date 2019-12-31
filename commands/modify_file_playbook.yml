@@ -1,0 +1,9 @@
+- name: Copy file
+  hosts: host-list
+  remote_user: vagrant
+  gather_facts: true
+  tasks:
+  - name: Insert a line at the end of a file.
+    lineinfile:
+        path: /home/vagrant/test.txt
+        line: last
