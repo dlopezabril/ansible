@@ -5,5 +5,5 @@
   tasks:
     - name: "copy file to remote host"
       copy:
-        src: uno.png
-        dest: /home/vagrant/uno.png
+        src: test.txt
+        dest: /home/vagrant/test.txt
