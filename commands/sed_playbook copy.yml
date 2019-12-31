@@ -1,9 +1,0 @@
-- name: Copy file
-  hosts: host-list
-  remote_user: vagrant
-  gather_facts: true
-  tasks:
-    - name: "copy file to remote host"
-      copy:
-        src: test.txt
-        dest: /home/vagrant/test.txt
