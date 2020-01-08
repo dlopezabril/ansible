@@ -3,38 +3,19 @@
   remote_user: vagrant
   gather_facts: true
   become: yes
-  vars:
-    # created with:
-    # python -c 'import crypt; print(crypt.crypt("mysecretpassword", "$1$SomeSalt$"))'
-    password: $1$SomeSalt$$1B66pVz2ciPc
   tasks:
-    # Check groups - "cat /etc/group"
-    - name: Add group "nixadmins" to remote server
+    - name: Add group "admins" to remote server
       group:
-        name: nixadmins
+        name: admins
         gid: 2010
         state: present
 
-    - name: Add group "Office" to remote server
-      group:
-        name: office
-        gid: 2011
-        state: present
-
-    - name: Add group "Warehouse" to remote server
-      group:
-        name: warehouse
-        gid: 2012
-        state: present 
-
-    # Check user creation - "cat /etc/passwd"
     - name: Add user "sernowuser" to remote server
       user: 
         name: sernowadmin
         comment: "Privileged User"
         uid: 2001
-        group: nixadmins
-        groups: office,warehouse
+        group: admins
         append: yes
         shell: /bin/bash
         generate_ssh_key: yes
