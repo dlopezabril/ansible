@@ -22,7 +22,6 @@
         ssh_key_bits: 2048
         ssh_key_file: .ssh/id_rsa
 
-    # sernowgroup ALL=(root) /usr/sbin/fdisk
     - name: Modify sudoers file for "sernowuser" in the remote servers
       lineinfile:
         dest: /etc/sudoers
