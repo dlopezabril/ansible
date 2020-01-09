@@ -4,20 +4,32 @@
   gather_facts: true
   become: yes
   tasks:
-    - name: Add group "admins" to remote server
+    - name: Add group "sernowgroup" to remote server
       group:
-        name: admins
+        name: sernowgroup
         gid: 2010
         state: present
 
     - name: Add user "sernowuser" to remote server
       user: 
         name: sernowadmin
-        comment: "Privileged User"
+        comment: "Privileged User for ServiceNow"
         uid: 2001
-        group: admins
+        group: sernowgroup
         append: yes
         shell: /bin/bash
         generate_ssh_key: yes
         ssh_key_bits: 2048
         ssh_key_file: .ssh/id_rsa
+
+    # sernowgroup ALL=(root) /usr/sbin/fdisk
+    - name: Modify sudoers file for "sernowuser" in the remote servers
+      lineinfile:
+        dest: /etc/sudoers
+        line: '{{ item }}'
+      with_items:
+        - '%sernowgroup ALL=(root) /bin/chage'
+        - '%sernowgroup ALL=(root) /sbin/chpasswd'
+        - '%sernowgroup ALL=(root) /usr/sbin/dmidecode'
+        - '%sernowgroup ALL=(root) /usr/sbin/fdisk'
+        - '%sernowgroup ALL=(root) /sbin/dmsetup'
