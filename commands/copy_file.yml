@@ -1,0 +1,9 @@
+- name: Copy file
+  hosts: host-list
+  remote_user: root
+  gather_facts: true
+  tasks:
+    - name: "copy file to remote host"
+      copy:
+        src: test.txt
+        dest: /opt/test.txt
