@@ -3,12 +3,13 @@ Ansible Automation Projects
 
 > **Access to Ansible workspace**
 ```shell
-code ~/Workspaces/ansible/ansible.code-workspace
+code ~/Workspace/ansible-sernow/ansible.code-workspace
 ```
 
 > **Set python source**
 ```shell
-source ~/Workspaces/splunk_scripts/env/bin/activate
+source ~/Workspace/ansible-sernow/env/bin/activate
+pip3 install ansible
 ```
 
 > **Set Path**
