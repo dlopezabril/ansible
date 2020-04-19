@@ -1,0 +1,23 @@
+- name: run the new module
+  sample:
+    name: 'hello'
+    new: true
+  register: testout
+- name: dump test output
+  debug:
+    msg: '{{ testout }}'
+
+- name: Setup ansible devices
+  setup:
+    filter: ansible_devices
+
+- name: Debug ansible devices
+  debug:
+    var: hostvars[inventory_hostname]["ansible_devices"]
+    verbosity: 1
+
+# - name: Query for data
+#   pause:
+#     prompt: "Test if exists"
+#     echo: no
+#   register: prompt_output
