@@ -2,7 +2,11 @@
 
 # Set environment
 source ~/Workspace/ansible-sernow/env/bin/activate
+
+#PYTHON UPDATE
+python3 -m pip install --upgrade pip
 pip3 install ansible
+pip3 install pywinrm
 
 # Set Path
 cd ~/Workspaces/ansible-sernow
